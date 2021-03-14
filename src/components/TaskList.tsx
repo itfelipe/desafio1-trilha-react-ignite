@@ -46,10 +46,7 @@ export function TaskList() {
     const nonRemovedTasks = tasks.filter(tasks => tasks.id !== id)
     setTasks(nonRemovedTasks)
   }
-  function removeMarkedTasks(id: number) {
-    const markedRemovedTasks = tasks.filter(tasks => tasks.isComplete === false)
-    setTasks(markedRemovedTasks)
-  }
+  
 
   return (
     <section className="task-list container">
@@ -66,9 +63,7 @@ export function TaskList() {
           <button type="submit" data-testid="add-task-button" onClick={handleCreateNewTask}>
             <FiCheckSquare size={16} color="#fff"/>
           </button>
-          <button type="submit" data-testid="remove-marked-tasks" onClick={removeMarkedTasks}>
-            <FiCheckSquare size={16} color="red"/>
-          </button>
+          
         </div>
       </header>
 
